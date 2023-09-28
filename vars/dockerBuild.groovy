@@ -9,5 +9,9 @@ def call(String dockerfile = 'Dockerfile',
         docker.withRegistry("${registryURL}", "${registryCredentials}") {
             dockerImage.push()
         }    
-        sh 'docker images'                   
+        sh '''
+            docker images
+            docker image prune -f 
+            docker rmi ${image_name}:${image_tag}
+        '''                   
 }
