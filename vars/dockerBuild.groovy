@@ -12,6 +12,7 @@ def call(String dockerfile = 'Dockerfile',
         sh """
             docker images
             docker image prune -f 
+            docker builder prune -af 
             docker rmi ${image_name}:${image_tag}
             docker images
         """                   
