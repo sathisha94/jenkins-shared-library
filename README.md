@@ -1,5 +1,7 @@
 # jenkins-shared-library-May-2023
 
+Jenkins Shared Library is the way of having a common pipeline code in the version control system which is git that can be called by any number of pipelines jobs just by referring to it in the pipeline code using @Library("<library_name>")_ 
+
 Create .groovy file and put shared library code here 
     - Make sure to remember and provide a meaningful name for groovy 
     - Groovy filename is used as the function call 
@@ -11,5 +13,9 @@ Integrated it with Jenkins
         Retrieval method - Modren SCM 
         Source Code Management - Git
 
-
-docker_build_may_class
+To call a shared library funciton / groovy script 
+    - use the name of the script in the pipeline job (Jenkinsfile)
+        example: 
+                gitCheckout('main',
+                            'itd_jenkins', 
+                            'https://github.com/jaintpharsha/Devops-ITD-May-2023.git')
