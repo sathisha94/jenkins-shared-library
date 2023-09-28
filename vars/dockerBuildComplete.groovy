@@ -11,6 +11,7 @@ def call(String git_branch = 'main', String git_credentials = null, String git_u
         stages {
             stage('Checkout code') {
                 steps {
+                    echo "This is dockerBuildComplete.groovy"
                     checkout([$class: 'GitSCM', 
                               branches: [[name: "*/${GIT_BRANCH}"]], 
                               userRemoteConfigs: [[credentialsId: "${GIT_CREDS}", url: "${GIT_URL}"]]
