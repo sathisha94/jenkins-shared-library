@@ -16,6 +16,7 @@ def call(String git_branch = 'main', String git_credentials = null, String git_u
                               branches: [[name: "*/${GIT_BRANCH}"]], 
                               userRemoteConfigs: [[credentialsId: "${GIT_CREDS}", url: "${GIT_URL}"]]
                             ])
+                    sh 'pwd; ls -lrt'        
                 }
             }
         }
